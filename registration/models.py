@@ -15,7 +15,7 @@ from django.db import models
 from django.db import transaction
 from django.template.loader import render_to_string
 from django.utils.translation import ugettext_lazy as _
-
+from django.core.mail import send_mail
 try:
     from django.utils.timezone import now as datetime_now
 except ImportError:
