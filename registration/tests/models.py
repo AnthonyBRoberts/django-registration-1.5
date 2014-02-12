@@ -15,10 +15,10 @@ from django.core import mail
 from django.core import management
 from django.test import TestCase
 from django.utils.hashcompat import sha_constructor
-
+from django.test.utils import override_settings
 from registration.models import RegistrationProfile
 
-
+@override_settings(EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend')
 class RegistrationModelTests(TestCase):
     """
     Test the model and manager used in the default backend.
